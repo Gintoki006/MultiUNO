@@ -1,4 +1,5 @@
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'Multi UNO Online',
@@ -24,7 +25,10 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/css/components.css" />
         <link rel="stylesheet" href="/css/overlays.css" />
       </head>
-      <body className="min-h-screen bg-slate-950 text-white">{children}</body>
+      <body className="min-h-screen bg-slate-950 text-white">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
